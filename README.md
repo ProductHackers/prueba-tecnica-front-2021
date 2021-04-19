@@ -31,3 +31,5 @@ Valoraremos cómo organizas tu trabajo y la implementación técnica.
 ## ¿Cómo enviar esta prueba?
 
 Clona este repo, haz tu implementación y envíanos una pull request.
+
+⚠️ Esta prueba no debería llevarte más de 2 o 3 horas. Si te lleva más tiempo, preséntala hasta donde hayas llegado sin problema.
