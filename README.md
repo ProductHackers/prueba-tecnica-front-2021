@@ -1,2 +1,24 @@
-# prueba-tecnica-front-2021
-Una prueba técnica para seleccionar fronts
+# Prueba técnica
+
+En Product Hackers se nos acumula el trabajo, necesitamos una aplicación de tareas ASAP :)
+
+Nuestros requisitos:
+- Debe funcionar en Google Chrome.
+- Debe poder arrancarse con un comando de consola (por ejemplo: `npm start`).
+- Debe ser atractiva (si no encuentras inspiración: [MS Todo](https://www.microsoft.com/en-us/microsoft-365/microsoft-to-do-list-app?rtc=1))
+- No necesitamos un backend.
+
+Funcionalidades MVP:
+- Poder añadir una tarea con un título
+- Poder marcar una tarea como hecha
+- Poder eliminar una tarea
+
+Funcionalidades extra (elige 2 de estas 4):
+- Persistencia en los datos (que al refrescar el navegador no pierdas las tareas).
+- Botón para archivar tareas ya hechas
+- Subtareas
+- Marcar una tarea como favorita
+
+Puedes utilizar el framework de javascript, stack tecnológico, libraría de componentes, framework de estilos, etc. que consideres.  
+**Para completar la prueba debes implementar todas las funcionalidades MVP y 2 de las funcionalidades extra a tu elección.**
+Valoraremos cómo organizas tu trabajo y la implementación técnica. 
