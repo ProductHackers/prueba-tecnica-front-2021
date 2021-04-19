@@ -22,3 +22,9 @@ Funcionalidades extra (elige 2 de estas 4):
 Puedes utilizar el framework de javascript, stack tecnológico, libraría de componentes, framework de estilos, etc. que consideres.  
 **Para completar la prueba debes implementar todas las funcionalidades MVP y 2 de las funcionalidades extra a tu elección.**
 Valoraremos cómo organizas tu trabajo y la implementación técnica. 
+
+---
+
+## ¿Cómo enviar esta prueba?
+
+Clona este repo, haz tu implementación y envíanos una pull request.
