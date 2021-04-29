@@ -1,0 +1,85 @@
+.c-todoapp {
+  padding: 1.6rem;
+  
+  &__title {
+    text-align: center;
+    font-size: 4rem;
+  }
+
+  &__container {
+    max-width: 76.8rem;
+    margin: auto;
+    display: flex;
+    font-size: 1.6rem;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 4.8rem;
+  }
+
+  &__box-input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__input {
+    border: 1px solid lightgray;
+    border-radius: 2.4rem;
+    width: 100%;
+    padding: 1rem;
+    margin-right: 2.4rem;
+    &::placeholder {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__button {
+    font-size: 1.6rem;
+    min-width: 16rem;
+    font-family: 'Montserrat', sans-serif;
+    border: 0;
+    background-color: lavender;
+    border-radius: 1.6rem;
+    padding: 1.6rem;
+    cursor: pointer;
+  }
+
+  &__list {
+    margin: 0;
+    margin-top: 4.8rem;
+    width: 100%;
+  }
+
+
+  &__list-item-text {
+    margin-right: 2.4rem;
+    display: inline-block;
+
+    &--line {
+      text-decoration: line-through;
+      color: lightgray;
+    }
+  }
+
+  &__list-item-button {
+    cursor: pointer;
+    border: 1px solid lightcyan;
+    background-color: lavender;
+    padding: .8rem;
+    margin-right: 1.6rem;
+    border-radius: .8rem;
+
+    &--disabled {
+      opacity: .5;
+    }
+  }
+
+  &__icon {
+    font-size: 1.6rem;
+
+    &--red {
+      color: red;
+    }
+  }
+}
