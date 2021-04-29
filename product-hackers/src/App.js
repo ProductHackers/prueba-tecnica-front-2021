@@ -13,38 +13,58 @@ const App = () => {
     initialTasks = [];
   };
 
-  const [allTask, updateAllTasks] = useState(initialTasks);
+  const [allTasks, updateAllTasks] = useState(initialTasks);
 
   useEffect(() => {
 
     let initialTasks = JSON.parse(localStorage.getItem('tasks'));
 
     if (initialTasks) {
-      localStorage.setItem('tasks', JSON.stringify(allTask))
+      localStorage.setItem('tasks', JSON.stringify(allTasks))
     }
     else {
       localStorage.setItem('tasks', JSON.stringify([]))
     }
-  }, [allTask])
+  }, [allTasks])
 
 
   //Adding new Tasks
   const addTask = task => {
     updateAllTasks([
-      ...allTask,
+      ...allTasks,
       task
     ])
   };
 
   //Delete Tasks
   function deleteTask(id) {
-    const newTasksList = allTask.filter(task => task.id !== id)
+    const newTasksList = allTasks.filter(task => task.id !== id)
     updateAllTasks(newTasksList)
   }
 
+  //Update Completed Tasks
+  const completedTask = id => {
 
+    let completed
+    const taskDone = allTasks.map(elm => {
+      completed = !elm.completed
+      return elm.id === id ? { ...elm, completed: completed} : elm
+    })
+    updateAllTasks(taskDone)
+  }
 
+  //Favorites Tasks
+  const favoritesTasks = id => {
 
+    let favorite
+    const favTask = allTasks.map(elm => {
+      favorite = !elm.favorite
+      return elm.id === id ? { ...elm, favorite: favorite } : elm
+    })
+    updateAllTasks(favTask)
+  }
+
+ 
   return (
   <>
       <Navigation />
@@ -52,10 +72,12 @@ const App = () => {
       <FormComponent
         addTask={addTask}
       />
-      {allTask.map(taskList => (
+      {allTasks.map(taskList => (
         <Tasks
           taskList={taskList}
           deleteTask={deleteTask}
+          completedTask={completedTask}
+          favoritesTasks={favoritesTasks}
         />
       ))}
   </>   

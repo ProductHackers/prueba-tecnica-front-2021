@@ -35,7 +35,9 @@ const FormComponent = ({ addTask }) => {
         addTask(task)
 
         addOneTask({
-            name: ''
+            name: '',
+            completed: false,
+            favorite: false
         });
 
     }
