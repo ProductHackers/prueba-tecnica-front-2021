@@ -1,12 +1,10 @@
 import React from 'react';
 import {Container, Col, Card, Button} from 'react-bootstrap'
 
-const Tasks = ({ taskList }) => {
+const Tasks = ({ taskList, deleteTask }) => {
     
 
-    const { name } = taskList;
-
-
+    const { name, id } = taskList;
 
     return (
 
@@ -16,8 +14,11 @@ const Tasks = ({ taskList }) => {
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
                         <Button variant="dark">Completada</Button>
-                        <Button variant="danger">Eliminar tarea</Button>
-                        <Button variant="danger">Marcar como favorita</Button>
+                        <Button
+                            variant="danger"
+                            onClick={() => deleteTask(id)}
+                        >Eliminar tarea</Button>
+                        <Button variant="warning">Marcar como favorita</Button>
                     </Card.Body>
                 </Card>
                 </Col>

@@ -27,12 +27,23 @@ const App = () => {
     }
   }, [allTask])
 
+
+  //Adding new Tasks
   const addTask = task => {
     updateAllTasks([
       ...allTask,
       task
     ])
+  };
+
+  //Delete Tasks
+  function deleteTask(id) {
+    const newTasksList = allTask.filter(task => task.id !== id)
+    updateAllTasks(newTasksList)
   }
+
+
+
 
   return (
   <>
@@ -44,6 +55,7 @@ const App = () => {
       {allTask.map(taskList => (
         <Tasks
           taskList={taskList}
+          deleteTask={deleteTask}
         />
       ))}
   </>   
