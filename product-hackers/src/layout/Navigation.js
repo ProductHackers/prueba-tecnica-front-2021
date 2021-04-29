@@ -4,7 +4,7 @@ import { Navbar } from 'react-bootstrap';
 
 const Navigation = () => {
     return (
-        <Navbar bg="dark" variant="dark">
+        <Navbar style={{ backgroundColor: '#000033' }}>
             <Navbar.Brand href="https://producthackers.com/es/">
                 <img
                     alt="Logo-product-hackers"
