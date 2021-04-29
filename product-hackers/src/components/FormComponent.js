@@ -61,6 +61,7 @@ const FormComponent = ({ addTask }) => {
                 <Col sm={4}>
                         <Button
                             variant="outline-danger"
+                            className="submit-btn"
                             type="submit"
                         >Añadir tarea</Button>
                 </Col>

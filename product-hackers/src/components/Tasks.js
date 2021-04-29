@@ -29,38 +29,36 @@ const Tasks = ({ taskList, deleteTask, completedTask, favoritesTasks }) => {
 
     return (
 
-        <Container>
             <Col md={4}>
                 <Card className="text-center">
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        {completed ?                         <Button
+                        {completed ?
+                        <Button
                             variant="dark"
+                            className="incompleted-btn"
                             onClick={() => completedTask(id)}
                         >Completada</Button>
                             :
                         <Button
                             variant="dark"
+                            className="completed-btn"
                             onClick={() => completedTask(id)}
                         >No completada</Button>
                         }
-                        <Button
-                            variant="danger"
-                            onClick={() => deleteAlert()}
-                        >Eliminar tarea</Button>
-                        <Button className='delete-button' onClick={() => deleteAlert()}>
-                            <Image className='trush' src={EmptyHeart} />
-                        </Button>
-                        <Button className='detail-fav-btn-card' onClick={() => favoritesTasks(id)}>
-                            {favorite ? <span className='detail-likeHeart' ><Image className='fullHeart'src={FullHeart}/></span>
+                        <br></br>
+                        <Button onClick={() => favoritesTasks(id)}>
+                            {favorite ? <Image className='fullHeart'src={FullHeart}/>
                                 :
-                                <span className='detail-unliked-btn '><Image className='emptyHeart' src={EmptyHeart}  /></span>
+                            <Image className='emptyHeart' src={EmptyHeart} />
                             }
+                        </Button>
+                        <Button className='delete-button' onClick={() => deleteAlert()}>
+                            <Image className='trush' src={Trush} />
                         </Button>
                     </Card.Body>
                 </Card>
                 </Col>
-        </Container>
      );
 }
  

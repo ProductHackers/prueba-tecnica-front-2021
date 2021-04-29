@@ -4,6 +4,7 @@ import MainContainer from './components/MainContainer';
 import FormComponent from './components/FormComponent'
 import Tasks from './components/Tasks';
 import './App.css';
+import { Container } from 'react-bootstrap';
 
 const App = () => {
 
@@ -72,6 +73,7 @@ const App = () => {
       <FormComponent
         addTask={addTask}
       />
+      <Container>
       {allTasks.map(taskList => (
         <Tasks
           taskList={taskList}
@@ -80,6 +82,7 @@ const App = () => {
           favoritesTasks={favoritesTasks}
         />
       ))}
+      </Container>
   </>   
   
   );
