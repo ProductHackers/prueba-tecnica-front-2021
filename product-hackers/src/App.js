@@ -1,11 +1,13 @@
+import Navigation from './layout/Navigation'
 import './App.css';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <h1>Hola mundo</h1>
-    </div>
+    
+    <Navigation />
+  
   );
 }
-
+ 
 export default App;
+
