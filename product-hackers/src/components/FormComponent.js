@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-import { Container, Col, Form, Button } from 'react-bootstrap'
+import { Container, Col, Form, Button } from 'react-bootstrap';
+
+import { v4 as uuidv4 } from 'uuid';
 
 const FormComponent = ({ addTask }) => {
 
     const [task, addOneTask] = useState({
-        name: ''
+        name: '',
+        completed: false,
+        favorite: false
     });
 
     const [error, updateError] = useState(false);
@@ -27,6 +31,7 @@ const FormComponent = ({ addTask }) => {
         }
 
         updateError(false);
+        task.id = uuidv4();
         addTask(task)
 
         addOneTask({
