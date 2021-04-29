@@ -1,11 +1,14 @@
 import React from 'react';
-import { Container, Col, Card, Button } from 'react-bootstrap';
+import EmptyHeart from './../img/empty_heart.png';
+import FullHeart from './../img/full_heart.png';
+import Trush from './../img/trush.png';
+import { Container, Col, Card, Button, Image } from 'react-bootstrap';
 import swal from 'sweetalert';
 
 const Tasks = ({ taskList, deleteTask, completedTask, favoritesTasks }) => {
     
 
-    const { name, id } = taskList;
+    const { name, id, favorite, completed } = taskList;
 
     const deleteAlert = () => {
         swal({
@@ -31,18 +34,29 @@ const Tasks = ({ taskList, deleteTask, completedTask, favoritesTasks }) => {
                 <Card className="text-center">
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Button
+                        {completed ?                         <Button
                             variant="dark"
                             onClick={() => completedTask(id)}
                         >Completada</Button>
+                            :
+                        <Button
+                            variant="dark"
+                            onClick={() => completedTask(id)}
+                        >No completada</Button>
+                        }
                         <Button
                             variant="danger"
                             onClick={() => deleteAlert()}
                         >Eliminar tarea</Button>
-                        <Button
-                            variant="warning"
-                            onClick={() => favoritesTasks(id)}
-                        >Marcar como favorita</Button>
+                        <Button className='delete-button' onClick={() => deleteAlert()}>
+                            <Image className='trush' src={EmptyHeart} />
+                        </Button>
+                        <Button className='detail-fav-btn-card' onClick={() => favoritesTasks(id)}>
+                            {favorite ? <span className='detail-likeHeart' ><Image className='fullHeart'src={FullHeart}/></span>
+                                :
+                                <span className='detail-unliked-btn '><Image className='emptyHeart' src={EmptyHeart}  /></span>
+                            }
+                        </Button>
                     </Card.Body>
                 </Card>
                 </Col>
@@ -51,3 +65,8 @@ const Tasks = ({ taskList, deleteTask, completedTask, favoritesTasks }) => {
 }
  
 export default Tasks;
+
+{/* <Button
+    variant="warning"
+    onClick={() => favoritesTasks(id)}
+>Marcar como favorita</Button> */}
