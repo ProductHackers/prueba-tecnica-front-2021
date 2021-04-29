@@ -2,7 +2,7 @@ import React from 'react';
 import EmptyHeart from './../img/empty_heart.png';
 import FullHeart from './../img/full_heart.png';
 import Trush from './../img/trush.png';
-import { Container, Col, Card, Button, Image } from 'react-bootstrap';
+import { Col, Card, Button, Image } from 'react-bootstrap';
 import swal from 'sweetalert';
 
 const Tasks = ({ taskList, deleteTask, completedTask, favoritesTasks }) => {
