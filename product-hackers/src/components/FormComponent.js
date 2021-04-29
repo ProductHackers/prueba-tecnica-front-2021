@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
 import { Container, Col, Form, Button } from 'react-bootstrap'
 
-const FormComponent = () => {
+const FormComponent = ({ addTask }) => {
 
-    const [task, addTask] = useState({
+    const [task, addOneTask] = useState({
         name: ''
     });
 
     const [error, updateError] = useState(false);
 
     const handleChange = e => {
-        addTask({
+        addOneTask({
             ...task,
             [e.target.name]: e.target.value
         })
@@ -27,13 +27,13 @@ const FormComponent = () => {
         }
 
         updateError(false);
-        
+        addTask(task)
 
+        addOneTask({
+            name: ''
+        });
 
     }
-
-
-
     return (
 
         <Container>
@@ -44,7 +44,9 @@ const FormComponent = () => {
                 <Col sm={6} className="my-1">
                     <Form.Control size="lg"
                         type="text"
+                        name="name"
                         placeholder="Añade tu tarea"
+                        value={name}
                         onChange={handleChange}
                         />
                     {error ? <p>Debes añadir una tarea</p> : null}

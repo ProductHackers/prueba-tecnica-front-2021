@@ -6,14 +6,19 @@ import './App.css';
 
 const App = () => {
 
+  const [allTask, updateAllTask] = useState([]);
 
-
+  const addTask = task => {
+    updateAllTask(task)
+  }
 
   return (
   <>
       <Navigation />
       <MainContainer />
-      <FormComponent />
+      <FormComponent
+        addTask={addTask}
+      />
   </>   
   
   );
