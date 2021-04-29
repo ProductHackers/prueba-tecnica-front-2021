@@ -4,7 +4,10 @@ import {Container, Col, Card, Button} from 'react-bootstrap'
 const Tasks = ({ taskList }) => {
     
 
-    const {name} = taskList
+    const { name } = taskList;
+
+
+
     return (
 
         <Container>
@@ -12,7 +15,9 @@ const Tasks = ({ taskList }) => {
                 <Card className="text-center">
                     <Card.Body>
                         <Card.Title>{name}</Card.Title>
-                        <Button variant="primary">Go somewhere</Button>
+                        <Button variant="dark">Completada</Button>
+                        <Button variant="danger">Eliminar tarea</Button>
+                        <Button variant="danger">Marcar como favorita</Button>
                     </Card.Body>
                 </Card>
                 </Col>
