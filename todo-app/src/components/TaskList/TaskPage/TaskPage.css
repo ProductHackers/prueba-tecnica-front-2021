@@ -1,0 +1,8 @@
+.new-task {
+    margin-top: 30px;
+    margin-left: 475px;
+    margin-right: 15px;
+    width: 50%;
+    display: flex;
+    flex-direction: row;    
+}
